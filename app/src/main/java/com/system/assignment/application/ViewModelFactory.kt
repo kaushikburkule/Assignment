@@ -12,7 +12,7 @@ class ViewModelFactory(private val apiHelper: ApiHelper, private val dbHelper: D
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
-            return MainActivityViewModel(apiHelper, dbHelper) as T
+            return MainActivityViewModel() as T
         }
         throw IllegalArgumentException("Unknown class name")
     }

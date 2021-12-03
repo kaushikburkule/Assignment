@@ -1,10 +1,17 @@
 package com.system.assignment.application
 
 import android.app.Application
+import com.system.assignment.di.component.AppComponent
+import com.system.assignment.di.component.DaggerAppComponent
 
-/**
- * Created by Kaushik Burkule on 04-12-2021 in Assignment
- * of package com.system.assignment.application
- */
 class Assignment : Application() {
+
+    var appComponent: AppComponent? = null
+
+    override fun onCreate() {
+        super.onCreate()
+        appComponent = DaggerAppComponent.builder().application(this).build()
+        appComponent!!.inject(this)
+    }
+
 }
