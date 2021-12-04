@@ -1,5 +1,7 @@
 package com.system.assignment.data.api
 
-class ApiHelperImpl(private val apiService: ApiService) : ApiHelper {
+import javax.inject.Inject
+
+class ApiHelperImpl @Inject constructor() : ApiHelper {
 
 }
