@@ -1,5 +1,6 @@
 package com.system.assignment.ui.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.system.assignment.data.repository.AppDataManager
 import com.system.assignment.data.repository.DataManager
@@ -13,7 +14,8 @@ class MainActivityViewModel @Inject constructor(
 
     private fun fetchUsers() {
         viewModelScope.launch {
-
+            val data = dataManager.getUsers()
+            Log.i("TAG", "fetchUsers: $data")
         }
     }
 

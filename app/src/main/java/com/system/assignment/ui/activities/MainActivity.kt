@@ -2,6 +2,7 @@ package com.system.assignment.ui.activities
 
 import android.os.Bundle
 import androidx.databinding.library.baseAdapters.BR
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.system.assignment.R
 import com.system.assignment.databinding.ActivityMainBinding
 import com.system.assignment.di.component.ActivityComponent
@@ -15,6 +16,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = viewDataBinding
+
+        binding.listView.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+
     }
 
     // Binding and initialization of basic components
