@@ -32,8 +32,7 @@ class AppDataManager @Inject constructor() : DataManager {
     @Inject
     lateinit var mContext: Context
 
-    override suspend fun getUsers(): List<ApiUser> {
-        return mApiHelper.getUsers()
-    }
+    override fun saveLocalStorage(value: String): String = mPreferencesHelper.saveLocalStorage(value)
+    override suspend fun getUsers(): List<ApiUser> = mApiHelper.getUsers()
 
 }
