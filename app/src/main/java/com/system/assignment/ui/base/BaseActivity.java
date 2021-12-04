@@ -22,7 +22,7 @@ import com.system.assignment.utils.NetworkUtils;
 
 import javax.inject.Inject;
 
-public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity{
+public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity {
 
     @Inject
     protected V mViewModel;
