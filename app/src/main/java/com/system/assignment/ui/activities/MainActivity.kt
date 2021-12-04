@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.system.assignment.R
 import com.system.assignment.databinding.ActivityMainBinding
 import com.system.assignment.di.component.ActivityComponent
+import com.system.assignment.ui.adapter.MainAdapter
 import com.system.assignment.ui.base.BaseActivity
 import com.system.assignment.ui.viewmodels.MainActivityViewModel
 
@@ -19,6 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
         binding.listView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = MainAdapter(mutableListOf("Kaushik", "Burkule"))
         }
 
     }
