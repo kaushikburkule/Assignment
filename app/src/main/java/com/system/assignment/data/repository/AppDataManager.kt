@@ -7,6 +7,7 @@ import com.system.assignment.data.local.DatabaseHelper
 import com.system.assignment.data.shared.PreferencesHelper
 import com.system.assignment.data.api.ApiHelper
 import com.google.gson.Gson
+import com.system.assignment.data.local.entity.User
 import com.system.assignment.data.model.ApiUser
 import com.system.assignment.data.repository.DataManager
 
@@ -32,6 +33,7 @@ class AppDataManager @Inject constructor() : DataManager {
     @Inject
     lateinit var mContext: Context
 
+    override fun getAllUsers(): List<User?> = mDbHelper.getAllUsers()
     override fun saveLocalStorage(value: String): String = mPreferencesHelper.saveLocalStorage(value)
     override suspend fun getUsers(): List<ApiUser> = mApiHelper.getUsers()
 

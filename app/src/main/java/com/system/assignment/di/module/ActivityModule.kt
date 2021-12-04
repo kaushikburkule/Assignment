@@ -24,7 +24,7 @@ class ActivityModule(private val activity : BaseActivity<*, *>) {
             }
         val factory: ViewModelProviderFactory<MainActivityViewModel> =
             ViewModelProviderFactory(MainActivityViewModel::class.java, supplier)
-        return ViewModelProvider(activity, factory).get(MainActivityViewModel::class.java)
+        return ViewModelProvider(activity, factory)[MainActivityViewModel::class.java]
     }
 
 }

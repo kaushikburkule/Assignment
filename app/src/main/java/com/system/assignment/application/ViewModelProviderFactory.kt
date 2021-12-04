@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @SuppressWarnings("unchecked")
 class ViewModelProviderFactory<T : ViewModel?>(
     private val viewModelClass: Class<T>,
-    private val viewModelSupplier: androidx.core.util.Supplier<MainActivityViewModel>
+    private val viewModelSupplier: androidx.core.util.Supplier<T>
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
